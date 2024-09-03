@@ -1,0 +1,35 @@
+ @charset "utf-8";
+
+@media only screen and (min-width: 1400px) {
+	.dN1400								{ display:none; }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+	.dN1200								{ display:none; }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+	.dN992								{ display:none; }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	.dN768								{ display:none; }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+	.dN576								{ display:none; }
+}
+@media only screen and (max-width: 575px) {
+	.dN320								{ display:none; }
+}
+
+
+/* BOOTSTRAP */
+
+@media screen and (min-width: 992px) {
+	.dN_oPC 							{ display:none; }
+	.pL40 								{ padding-left:40px; }
+	.pR40 								{ padding-right:40px; }
+}
+
+@media screen and (max-width: 991px) {
+	.dN_oS								{ display:none; }
+	.slick-next, .slick-prev 			{ display:none !important; }
+	.oH_oS 								{ overflow:hidden; }
+}

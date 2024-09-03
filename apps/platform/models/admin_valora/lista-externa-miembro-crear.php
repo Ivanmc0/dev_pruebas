@@ -1,0 +1,35 @@
+<?php require_once ('../../appInit.php');
+
+  
+
+    if($_PLATFORM->PermissionValidationModel ($_POST['app'], $_POST['event'], $_POST["panel"])){
+
+        if($_POST['nombre'] == '') MsgError('Debe indicar el nombre', 1);
+        if($_POST['email'] == '') MsgError('Debe indicar el email', 1);
+
+        $data = [
+            'inactivo'           => $_POST['inactivo'],
+            'nombre'             => $_POST['nombre'],
+            'email'              => $_POST['email'],
+            'celular'            => $_POST['celular'],
+            'empresa'            => $_POST['empresa'],
+            'cargo'              => $_POST['cargo'],
+            'id_publico_listado' => $_POST['id_publico_listado'],
+            'id_empresa'         => $_SESSION['COMPANY']['id'],
+        ];
+
+
+        if($registro = $_ZOOM->insert_data_array($data, 'grw_val_listasexternas_registros')){
+            echo 1;
+        } else {
+            MsgError('Error al intentar guardar el registro', 1);
+        }
+
+    } else {
+
+        // Error de permisos
+        MsgError('Error de seguridad, no se puede continuar.');
+
+    }
+
+?>

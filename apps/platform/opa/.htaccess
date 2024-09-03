@@ -1,0 +1,4 @@
+<ifModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule (.*)/(.*).zoom$ views/index.php?gzoom=$1&gzoom2=$2
+</IfModule>

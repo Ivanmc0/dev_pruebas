@@ -1,0 +1,27 @@
+<?php require_once ('../../../appInit.php');
+
+    require_once('../../../../../../class/classCampai.php');
+    $_CAMPAI = new Campai();
+
+	if(isset($_POST["id"])) $id = trim($_POST["id"]); else $id = "";
+
+	$insert = 0;
+	$update = 0;
+
+	if($id == ""){
+		$_POST["fecha"] = date("Y-m-d H:i:s");
+		$insert = $_CAMPAI->insert_data_array($_POST, $_POST["tabla"]);
+	} else {
+		$update = $_CAMPAI->update_data_array($_POST, $_POST["tabla"], "id_presentacion", $id);
+	}
+
+	if($insert != 0) {
+		echo "<div class='success'>Registro creado correctamente</div>";
+		echo '<script>setTimeout(function(){ history.go(-1); }, 1500);</script>';
+	}
+	if($update != 0){
+		echo '<div class="success">Los cambios se han guardado correctamente</div>';
+		echo '<script>setTimeout(function(){ history.go(-1); }, 1500);</script>';
+	}
+
+?>

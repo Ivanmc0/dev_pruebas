@@ -1,0 +1,39 @@
+<?php
+    if($id != 0) $complemento = " AND id_empresa = $id "; else $complemento = "";
+    $listados = $_ZOOM->get_data($access_model["tabla"], $complemento." AND eliminado = 0 ORDER BY id DESC ", 1);
+    $orgs = 0; if($listados) foreach ($listados as $key => $value) if($value["activo"] == 1) $orgs += 1;
+?>
+
+<div class="content-body">
+
+    <div class="card">
+        <div class="card-content collapse show">
+            <div class="card-header">
+                <div id="rtn_list" class="fR taR"></div>
+                <h4 class="card-title">
+                    <div class="fR">
+                        <?php
+                            if($orgs == 1) echo '<div class="t14 success">Esta empresa tiene '.$orgs.' organigrama activo.</div>';
+                            elseif($orgs > 1) echo '<div class="t14 danger">Esta empresa tiene '.$orgs.' organigramas activos.</div>';
+                            else echo '<div class="t14 danger">Esta empresa no tiene un organigrama activo.</div>';
+                        ?>
+                    </div>
+                    Listado de
+                    <?= ($access_model["modulo"]); ?>
+                    de:
+                    <strong>
+                        <?php
+                            $grupo = $_ZOOM->get_data("olc_empresas", " AND id = ".$id." AND eliminado = 0 ORDER BY id DESC ", 0);
+                            if($grupo) echo ($grupo["nombre"]);
+                        ?>
+                    </strong>
+                </h4>
+            </div>
+            <?php
+                if($listados) include "listas/".($access_model["archivo"]).".php";
+                else echo '<div class="card-title t30 taC p50">No hay registros</div>';
+            ?>
+        </div>
+    </div>
+
+</div>

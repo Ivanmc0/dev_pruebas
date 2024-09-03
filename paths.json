@@ -1,0 +1,4 @@
+{
+    "zendor": "zendor/vendor/",
+    "phpMailer" :"zendor/vendor/phpmailer/phpmailer/src/"
+}

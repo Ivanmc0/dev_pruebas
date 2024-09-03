@@ -1,0 +1,380 @@
+
+
+.modal {
+    background-color: rgba(180, 180, 180, 0.90);
+}
+
+.modalion {
+    border            : 0;
+    border-radius     : 10px;
+    -webkit-box-shadow: 2px 2px 3px 1px rgba(0,0,0,0.15);
+    box-shadow        : 2px 2px 3px 1px rgba(0,0,0,0.15);
+    overflow          : hidden;
+    display           : block;
+    letter-spacing    : 0.5px;
+}
+
+.modalion .modal-header {
+    padding         : 50px;
+    background-color: #fff;
+    display         : block;
+    border          : none;
+}
+
+.modalion .modal-header .modal-title {
+    font-size    : 24px;
+    line-height  : 1em;
+    color        : #333;
+    font-weight  : 700;
+    margin-bottom: 5px;
+}
+
+.modalion .modal-header .modal-description {
+    font-size  : 16px;
+    line-height: 1em;
+    color      : #666;
+    font-weight: 400;
+}
+
+.modalion .modal-header i {
+    color           : #1090e0;
+}
+.modalion .modal-header.type3 i {
+    color           : #e01010;
+}
+
+.modalion .modal-body {
+    padding         : 50px;
+    background-color: #f1f9ff;
+    display         : block;
+    border          : none;
+}
+
+.modalion .modal-body.type3 {
+    background-color: #fff1f1;
+}
+
+.modalion .modal-body .label {
+    font-size    : 15px;
+    line-height  : 1em;
+    color        : #666;
+    font-weight  : 400;
+    margin-bottom: 7px;
+}
+.modalion .modal-body .label span {
+    font-size    : 13px;
+    line-height  : 1em;
+    color        : #666;
+    font-weight  : 300;
+}
+
+
+.modalion .modal-footer {
+    background-color: #e7ebee;
+    padding         : 20px;
+    display         : block;
+    border          : none;
+}
+
+.modalion .modal-footer.type3 {
+    background-color: #eee7e7;
+}
+
+.modalion .input {
+    width          : 100%;
+    padding        : 10px 15px;
+    border         : 2px solid #ccc;
+    border-radius  : 7px;
+    font-size      : 15px;
+    line-height    : 1em;
+    color          : #333;
+    font-weight    : 500;
+}
+
+.modalion .input:read-only {
+    background-color: #eee;
+}
+
+.modalion .select {
+    width              : 100%;
+    padding            : 12px 30px 11px 15px;
+    border             : 2px solid #ccc;
+    border-radius      : 7px;
+    font-size          : 15px;
+    line-height        : 1em;
+    color              : #333;
+    font-weight        : 500;
+    appearance         : none;
+    -moz-appearance    : none;
+    -webkit-appearance : none;
+    background-image   : url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-repeat  : no-repeat;
+    background-position: right 5px top 50%;
+}
+
+
+
+.modalion .input::placeholder, .modalion .select::placeholder {
+    color: #aaa;
+}
+
+.modalion .input:focus, .modalion .select:focus {
+    border-color: #92d5ff;
+    transition  : 0.5s;
+}
+
+
+
+
+.btn-1, .btn-2, .btn-3, .btn-5, .btn-process, .btn-growi  { display: inline-block; overflow: hidden; border-spacing: 0; border-collapse: collapse; }
+
+.btn-1 span, .btn-1 i,
+.btn-2 span, .btn-2 i,
+.btn-3 span, .btn-3 i           { display: table-cell; vertical-align: middle; }
+
+.btn-zl                         { font-size: 16px; font-weight: 600; margin: 5px; padding: 0 8px; }
+.btn-zm                         { font-size: 15px; font-weight: 500; margin: 3px; padding: 0 5px; }
+.btn-zs                         { font-size: 14px; font-weight: 500; margin: 1px; padding: 0 3px; }
+.btn-zxs                        { font-size: 12px; font-weight: 400; margin: 1px; padding: 0 1px; }
+.btn-zxxxs                      { font-size: 11px; font-weight: 400; margin: 1px; padding: 0 1px; }
+
+.btn-zl i                        { font-size:24px; padding: 15px 40px; }
+.btn-zl span                     { font-size:18px; padding: 15px 40px 15px 0; text-align: left; }
+.btn-zm i                        { font-size:20px; padding: 8px; }
+.btn-zm span                     { font-size:16px; padding: 8px 20px 8px 0; text-align: left; }
+.btn-zs i                        { font-size:18px; padding: 8px; }
+.btn-zs span                     { font-size:14px; padding: 6px 12px 6px 0; text-align: left; }
+.btn-zxs i                       { font-size:14px; padding: 3px; }
+.btn-zxs span                    { font-size:12px; padding: 3px 6px 3px 0; text-align: left; }
+.btn-zxxxs i                     { font-size:12px; padding: 2px 1px; }
+.btn-zxxxs span                  { font-size:10px; padding: 2px 4px 2px 0; text-align: left; }
+
+.btn-5 span                     { display: table-cell; vertical-align: middle; font-size:16px; padding: 8px 16px 8px 16px; text-align: left; font-weight: 600; }
+.btn-5 i                        { display: table-cell; vertical-align: middle; font-size:20px; padding: 8px; }
+.btn-5 i.left                   { padding-right:0; }
+.btn-5 i.right                  { padding-left:0; }
+
+.btn-process span               { display: table-cell; vertical-align: middle; font-size:16px; padding: 8px 16px 8px 16px; text-align: left; font-weight: 600; }
+.btn-process i                  { display: table-cell; vertical-align: middle; font-size:20px; padding: 8px; }
+.btn-process i.left             { padding-right:0; }
+.btn-process i.right            { padding-left:0; }
+
+.btn-growi span               { display: table-cell; vertical-align: middle; font-size:16px; padding: 8px 16px 8px 16px; text-align: left; font-weight: 600; }
+.btn-growi i                  { display: table-cell; vertical-align: middle; font-size:20px; padding: 8px; }
+.btn-growi i.left             { padding-right:0; }
+.btn-growi i.right            { padding-left:0; }
+
+
+
+
+.submodule .btn-zm               { font-size: 14px; font-weight: 500; margin: 1px; padding: 0; }
+.submodule .btn-zm i             { font-size:14px; padding: 5px; }
+.submodule .btn-zm span          { font-size:14px; padding: 4px 8px 4px 0; text-align:left; }
+
+
+
+
+.btn-1 {
+    background-color: #1090e0;
+    color           : #fff;
+    border          : 1px solid #1090e0;
+    border-radius   : 7px;
+    line-height     : 1em;
+    cursor          : pointer;
+    text-align      : center;
+    text-decoration : none;
+    letter-spacing  : 0.6px;
+}
+
+.btn-1:hover {
+    background-color: #0d7ab8;
+    border-color    : #0d7ab8;
+    color           : #fff;
+    transition      : 0.5s;
+}
+
+.btn-2 {
+    background-color: #eaf9ff;
+    color           : #000;
+    border          : 1px solid #c6edff;
+    border-radius   : 7px;
+    line-height     : 1em;
+    cursor          : pointer;
+    text-align      : center;
+    text-decoration : none;
+    letter-spacing  : 0.6px;
+}
+
+.btn-2:hover {
+    background-color: #c6edff;
+    border-color    : #c6edff;
+    color           : #000;
+    transition      : 0.5s;
+}
+
+.btn-3 {
+    background-color: #ffebeb;
+    color           : #000;
+    border          : 1px solid #ffd1d1;
+    border-radius   : 7px;
+    line-height     : 1em;
+    cursor          : pointer;
+    text-align      : center;
+    text-decoration : none;
+    letter-spacing  : 0.6px;
+}
+
+.btn-3:hover {
+    background-color: #ffd1d1;
+    border-color    : #ffd1d1;
+    color           : #000;
+    transition      : 0.5s;
+}
+
+.btn-5 {
+    background-color: rgba(255, 255, 255, 0.0);
+    color           : #fff;
+    border          : 1px solid #fff;
+    border-radius   : 7px;
+    line-height     : 1em;
+    cursor          : pointer;
+    text-align      : center;
+    text-decoration : none;
+    letter-spacing  : 0.6px;
+}
+
+.btn-5:hover {
+    background-color: rgba(255, 255, 255, 1);
+    color           : #333;
+    transition      : 0.5s;
+}
+
+.btn-process {
+    background-color: #1090e0;
+    color           : #fff;
+    border          : 0;
+    border-radius   : 7px;
+    line-height     : 1em;
+    cursor          : pointer;
+    text-align      : center;
+    text-decoration : none;
+    letter-spacing  : 0.6px;
+}
+
+.btn-process:hover {
+    background-color: #004974;
+    color           : #fff;
+    transition      : 0.5s;
+}
+
+.btn-growi {
+    background-color: #0c0040;
+    color           : #fff;
+    border          : 0;
+    border-radius   : 7px;
+    line-height     : 1em;
+    cursor          : pointer;
+    text-align      : center;
+    text-decoration : none;
+    letter-spacing  : 0.6px;
+}
+
+.btn-growi:hover {
+    background-color: #004974;
+    color           : #fff;
+    transition      : 0.5s;
+}
+
+
+.btn-accion {
+    background-color: #0d7ab8;
+    color           : #fff;
+    border          : 0;
+    border-radius   : 7px;
+    padding         : 15px 40px;
+    font-size       : 16px;
+    line-height     : 1em;
+    font-weight     : 600;
+    cursor          : pointer;
+    display         : inline-block;
+    text-align      : center;
+    text-decoration : none;
+    margin          : 0 10px;
+    letter-spacing  : 0.8px;
+}
+
+.btn-accion.type2 {
+    background-color: #40cd81;
+    border-color    : #40cd81;
+}
+
+.btn-accion.type3 {
+    background-color: #e01010;
+    border-color    : #e01010;
+}
+
+.btn-accion:hover {
+    background-color: #0d7ab8;
+    border-color    : #0d7ab8;
+    color           : #fff;
+    transition      : 0.5s;
+}
+.btn-accion.type2:hover {
+    background-color: #1ca05a;
+    border-color    : #1ca05a;
+}
+.btn-accion.type3:hover {
+    background-color: #b80d0d;
+    border-color    : #b80d0d;
+}
+
+.btn-cancelar {
+    background-color: transparent;
+    color           : #666;
+    border          : 2px solid #aaa;
+    border-radius   : 7px;
+    padding         : 15px 40px;
+    font-size       : 16px;
+    line-height     : 1em;
+    font-weight     : 600;
+    cursor          : pointer;
+    display         : inline-block;
+    text-align      : center;
+    text-decoration : none;
+    margin          : 0 10px;
+    letter-spacing  : 0.8px;
+}
+
+.btn-cancelar:hover {
+    background-color: #ccc;
+    border-color    : #ccc;
+    color           : #000;
+    transition      : 0.5s;
+}
+
+.alert .btn-2 {
+    background-color: #1090e0;
+    color           : #fff;
+    border          : 1px solid #1090e0;
+}
+
+.alert .btn-2:hover {
+    background-color: #0d7ab8;
+    border-color    : #0d7ab8;
+    color           : #fff;
+    transition      : 0.5s;
+}
+
+
+
+@media screen and (max-width: 991px) {
+
+    .modalion .modal-header                     { padding : 30px; }
+    .modalion .modal-body                       { padding : 30px; }
+    .modalion .modal-footer                     { padding : 20px 10px; }
+
+    .btn-1                                      { padding : 10px 25px; }
+    .btn-2                                      { padding : 10px 25px; }
+    .btn-cancelar, .btn-accion                  { padding : 10px 25px; }
+
+}

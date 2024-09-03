@@ -1,0 +1,81 @@
+{
+    "apps"  : {
+        "sites-tc": {
+            "graficador": {
+                "code": "olc-tucoach-graficador",
+                "name": "Comparador Gráfico",
+                "env" : {
+                    "dev": {
+                        "status": 1,
+                        "url"   : "http://olcgroup.local/reportes/graficador-personas-empresa/fcbd4e408bb03ee0e2a5795b68df0324//"
+                    },
+                    "test": {
+                        "status": 1,
+                        "url"   : "https://web.leletog.com/reportes/graficador-personas-empresa/fcbd4e408bb03ee0e2a5795b68df0324//"
+                    },
+                    "prod": {
+                        "status": 1,
+                        "url"   : "https://olcgroup.co/reportes/graficador-personas-empresa/fcbd4e408bb03ee0e2a5795b68df0324//"
+                    }
+                }
+            },
+            "landing": {
+                "code": "olc-web-landing",
+                "name": "Landing Page reutilizable",
+                "env" : {
+                    "dev": {
+                        "status": 1,
+                        "url"   : "http://olcgroup.local/landing/prueba-gratis-para-lideres//"
+                    }
+                    ,"test": {
+                        "status": 1,
+                        "url"   : "http://web.leletog.com/landing/prueba-gratis-para-lideres//"
+                    },
+                    "prod": {
+                        "status": 1,
+                        "url"   : "http://olcgroup.co/landing/prueba-gratis-para-lideres//"
+                    }
+                }
+            }
+        },
+
+        "sites-lele": {
+            "ranking": {
+                "code": "olc-leletog-ranking",
+                "name": "Ranking Banco W: 2024 - Sistema de balances y ranking de personas",
+                "env" : {
+                    "dev": {
+                        "status": 1,
+                        "url"   : "http://leletog.olcgroup.local/bancow-2024/balance/grupo1/sesion1//"
+                    },
+                    "test": {
+                        "status": 1,
+                        "url"   : "https://leletog.leletog.com/bancow-2024/balance/grupo1/sesion1//"
+                    },
+                    "prod": {
+                        "status": 1,
+                        "url"   : "https://leletog.olcgroup.co/bancow-2024/balance/grupo1/sesion1//"
+                    }
+                }
+            },
+            "importador": {
+                "code": "olc-leletog-importador",
+                "name": "Importador y generador de gráficos desde excel",
+                "env" : {
+                    "dev": {
+                        "status": 1,
+                        "url"   : "http://leletog.olcgroup.local/graph/import//"
+                    },
+                    "test": {
+                        "status": 1,
+                        "url"   : "https://leletog.leletog.com/graph/import//"
+                    },
+                    "prod": {
+                        "status": 1,
+                        "url"   : "https://leletog.olcgroup.co/graph/import//"
+                    }
+                }
+            }
+        }
+    }
+}

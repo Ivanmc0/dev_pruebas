@@ -1,0 +1,42 @@
+<?php require_once ('../../../appInit.php');
+
+	if($_POST["nombre"] != ""){
+
+		if(isset($_POST["id"])) $id = trim($_POST["id"]); else $id = "";
+
+		$insert = 0;
+		$update = 0;
+
+		$imgg 		= "imagen";
+		$direccion 	= "../../../../static/".$_POST["carpeta"];
+		if(isset($_FILES[$imgg]['name'])){
+			$nombreImg   = explode('.', $_FILES[$imgg]['name']);
+			$nombreFinal = "john-vinasco_".$_POST["seo"]."_".time().".".end($nombreImg);
+			if (move_uploaded_file($_FILES[$imgg]['tmp_name'], $direccion.$nombreFinal)){
+				require_once '../../class/resize-class.php';
+				$oResize = new resize($direccion.$nombreFinal);
+				$oResize -> resizeImage(200, 200, 'crop');
+				$oResize -> saveImage($direccion."s/".$nombreFinal, 100);
+				$_POST[$imgg] = $nombreFinal;
+			}
+		}
+
+		if($id == ""){
+			$_POST["fecha"] = date("Y-m-d H:i:s");
+			$insert = $_TUCOACH->insert_data_array($_POST, $_POST["tabla"]);
+		} else {
+			$update = $_TUCOACH->update_data_array($_POST, $_POST["tabla"], "id", $id);
+		}
+
+		if($insert != 0) {
+			echo "<div class='success'>Registro creado correctamente</div>";
+			echo '<script>setTimeout(function(){ history.go(-1); }, 1500);</script>';
+		}
+		if($update != 0){
+			echo '<div class="success">Los cambios se han guardado correctamente</div>';
+			echo '<script>setTimeout(function(){ history.go(-1); }, 1500);</script>';
+		}
+
+	} else echo '<div class="danger">Debe ingresar el nombre del testigo</div>';
+
+?>

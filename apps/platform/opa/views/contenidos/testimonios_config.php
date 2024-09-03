@@ -1,0 +1,95 @@
+<?php
+    $edit = false;
+    $tablus = $access_model["tabla"];
+
+    if($access_model["tipo"] == 1){
+        $edit = false;
+    }else if($access_model["tipo"] == 2) {
+        $getThis    = $_TUCOACH->get_data($tablus, " AND id = ".$id." ORDER BY id DESC ", 0);
+        $edit       = true;
+    }
+
+    if($edit == false || $getThis){
+?>
+
+<div class="content-body">
+
+    <form action="contenidos/accion-testimonios" id="formion" name="formion" method="post" class="form-horizontal zoom_form">
+
+        <?php if($edit){ ?>
+            <input type="hidden" id="id" name="id" value="<?= $id; ?>" />
+        <?php }else{ ?>
+            <input type="hidden" id="id_grupo" name="id_grupo" value="<?= $id; ?>" />
+        <?php } ?>
+
+        <div class="card">
+            <div class="card-content collapse show">
+                <div class="card-header">
+                    <h4 class="card-title">Ingrese los datos para <?= ($access_model["modulo"]); ?></h4>
+                    <input type="hidden" id="tabla" name="tabla" value="<?= $tablus; ?>" />
+                    <input type="hidden" id="carpeta" name="carpeta" value="testimonios/" />
+                </div>
+                <div class="card-body">
+
+                    <div class="row mb20">
+                        <div class="col-md-3">
+                            <label class="control-label">Nombre</label>
+                            <input class="form-control form-group-margin" type="text" id="nombre" name="nombre" value="<?php if($edit) echo ($getThis["nombre"]); ?>" />
+                        </div>
+                        <div class="col-md-3">
+                            <label class="control-label">Cargo</label>
+                            <input class="form-control form-group-margin" type="text" id="cargo" name="cargo" value="<?php if($edit) echo ($getThis["cargo"]); ?>" />
+                        </div>
+                        <div class="col-md-3">
+                            <label class="control-label">Prioridad</label>
+                            <input class="form-control form-group-margin" type="text" id="prioridad" name="prioridad" value="<?php if($edit) echo ($getThis["prioridad"]); ?>" />
+                        </div>
+                        <div class="col-md-3">
+                            <label class="control-label">Estado</label>
+                            <select class="form-control form-group-margin" id="inactivo" name="inactivo">
+                                <option value="0" <?php if($edit && $getThis["inactivo"] == 0) echo "selected"; ?>>Activo</option>
+                                <option value="1" <?php if($edit && $getThis["inactivo"] == 1) echo "selected"; ?>>Inactivo</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb20">
+                        <div class="col-md-12">
+                            <label class="control-label">Testimonio</label>
+                            <input class="form-control form-group-margin" type="text" id="testimonio" name="testimonio" value="<?php if($edit) echo ($getThis["testimonio"]); ?>" />
+                        </div>
+
+                    </div>
+                    <div class="row align-items-center mb20">
+                        <div class="col-md-3">
+                            <?php
+                                if($getThis["imagen"] != "")    $thisImagen = $rutaStatic.'testimonios/s/'.($getThis["imagen"]);
+                                else                            $thisImagen = $sinImagen;
+                            ?>
+                            <img src="<?= $thisImagen; ?>" class="w100" />
+                        </div>
+                        <div class="col-md-9">
+                            <label class="control-label">Imagen</label>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="imagen" name="imagen">
+                                <label class="custom-file-label" for="imagen" aria-describedby="inputGroupFileAddon02">Seleccione una imagen</label>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="rtn-formion" class="taC mb20"></div>
+
+        <?php include $roution."views/botones_config.php"; ?>
+
+        <div class="h50"></div>
+
+    </form>
+
+</div>
+
+<?php
+    }else echo '<div class="taC p40 t24">¡No se encontró la configuración buscada!</div>';
+?>
